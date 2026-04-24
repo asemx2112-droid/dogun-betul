@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <title>دعوة زفاف: الدكتور عاصم والدكتورة بتول</title>
+    <meta name="title" content="دعوة زفاف: الدكتور عاصم والدكتورة بتول">
+    <meta name="description" content="بحضوركم تكتمل فرحتنا">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asemx2112-droid.github.io/dogun/">
+    <meta property="og:title" content="دعوة زفاف: الدكتور عاصم والدكتورة بتول">
+    <meta property="og:description" content="بحضوركم تكتمل فرحتنا">
+    <meta property="og:image" content="https://asemx2112-droid.github.io/dogun/preview-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://asemx2112-droid.github.io/dogun/">
+    <meta property="twitter:title" content="دعوة زفاف: الدكتور عاصم والدكتورة بتول>
+	<meta property=" twitter:description" content="بحضوركم تكتمل فرحتنا">
+    <meta property="twitter:image" content="https://asemx2112-droid.github.io/dogun/preview-image.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c2a36b;
+            --purple: #9b7eb1;
+            --soft-bg: #fdfcfd;
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%; min-height: 100vh;
+            font-family: 'Amiri', serif; overflow-x: hidden;
+            background: url("background.jpeg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* --- نظام الباب الرقمي المطور --- */
+        .door-wrapper {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2000; perspective: 1500px; display: flex;
+            background-color: #f7f3e9;
+        }
+
+        .door {
+            width: 50%; height: 100%;
+            /* استخدمنا صورة الباب التي أرفقتها */
+            background-image: url('door.png'); 
+            background-size: 200% 100%; /* تمديد الصورة لتغطي الشطرين */
+            position: absolute;
+            transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer; z-index: 2001;
+        }
+
+        /* الشطر الأيمن (يحتوي على حرف ع) */
+        .door-right {
+            right: 0;
+            transform-origin: right;
+            background-position: right center; /* إظهار النصف الأيمن من الصورة */
+        }
+
+        /* الشطر الأيسر (يحتوي على حرف ب) */
+        .door-left {
+            left: 0;
+            transform-origin: left;
+            background-position: left center; /* إظهار النصف الأيسر من الصورة */
+        }
+
+        /* حركة الفتح الثلاثية الأبعاد */
+        .door-wrapper.open .door-left {
+            transform: rotateY(110deg);
+        }
+
+        .door-wrapper.open .door-right {
+            transform: rotateY(-110deg);
+        }
+
+        /* إخفاء نظام الباب تدريجياً بعد الفتح */
+        .door-wrapper.open {
+            pointer-events: none;
+            transition: opacity 1.5s ease 1s, visibility 1.5s ease 1s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .open-hint {
+            position: absolute; bottom: 15%; width: 100%; text-align: center;
+            color: var(--gold); z-index: 2005; font-size: 1.5rem; font-weight: bold;
+            animation: pulse 2s infinite; text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+        /* --- محتوى الدعوة (البطاقة) --- */
+        .invitation-page {
+            z-index: 100; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; padding: 40px 20px;
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            padding: 40px 25px; border-radius: 15px; width: 100%; max-width: 500px;
+            text-align: center; border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* باقي التنسيقات (الأزرار والخطوط) مستمدة من ملفك الأصلي */
+        .quran-verse { font-size: 2.2rem; color: var(--gold); font-weight: bold; margin-bottom: 10px; }
+        .parents-info { font-size: 1.1rem; color: #444; margin-bottom: 20px; line-height: 1.4; }
+        .wedding-invite-text { color: var(--purple); font-size: 1.4rem; margin: 15px 0; font-weight: bold; }
+        .couple-names { font-size: 2.6rem; color: #333; margin: 15px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .rings-icon { width: 60px; height: auto; }
+        .details-grid { display: flex; justify-content: space-around; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 15px 0; margin: 20px 0; }
+        .btn { padding: 14px; border-radius: 30px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; transition: 0.3s; }
+        .btn-maps { background: var(--purple); color: white; }
+        .btn-confirm { border: 2px solid #25d366; color: #25d366; }
+        .btn-confirm:hover { background: #25d366; color: white; }
+    </style>
+</head>
+
+<body>
+
+    <div class="door-wrapper" onclick="this.classList.add('open')">
+        <div class="door door-left"></div>
+        <div class="door door-right"></div>
+        <div class="open-hint">تفضلوا بالدخول</div>
+    </div>
+
+    <div class="invitation-page">
+        <div class="main-card">
+            <div class="quran-verse">وَخَلَقْنَاكُمْ أَزْواجاً</div>
+
+            <div style="display: flex; justify-content: space-around; margin: 15px 0;">
+                <div class="parents-info">حرم الدكتور<br><strong>خالد طعمة</strong><br><small>رحمه الله</small></div>
+                <div class="parents-info">حرم المهندس<br><strong>محمد ربيع أشمر</strong></div>
+            </div>
+
+            <div class="wedding-invite-text">نتشرف بدعوتكم لحضور حفل زفاف</div>
+
+            <div class="couple-names">
+                <div><small style="font-size: 1rem; display: block; color: var(--gold);">الدكتور</small>عاصم</div>
+                <img src="rings.jpeg" class="rings-icon" alt="rings">
+                <div><small style="font-size: 1rem; display: block; color: var(--gold);">الدكتورة</small>بتول</div>
+            </div>
+
+            <div style="color: var(--purple); font-size: 1.2rem; margin: 15px 0;">بارك الله لهما وبارك عليهما<br>وجمع بينهما في خير</div>
+
+            <div class="details-grid">
+                <div class="detail-item"><div>الجمعة</div><strong>08.05.2026</strong></div>
+                <div style="width: 1px; height: 40px; background: #eee;"></div>
+                <div class="detail-item"><div>إنجي دعوت</div><strong>INCI DAVET</strong></div>
+                <div style="width: 1px; height: 40px; background: #eee;"></div>
+                <div class="detail-item"><div>الساعة</div><strong>7:00 م</strong></div>
+            </div>
+
+            <div style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">
+                بحضوركم تكتمل فرحتنا <br> "الصالة تمنع اصطحاب الأطفال، يرجى عدم الاحراج" <br>
+                <small>يرجى تأكيد الحضور قبل 05.05.2026</small>
+            </div>
+
+            <div class="btn-container">
+                <a href="https://maps.app.goo.gl/JjgEvQ9RHBw3G6Du6" target="_blank" class="btn btn-maps">📍 موقع الصالة</a>
+                <a href="https://wa.me/905376002092?text=نؤكد+حضورنا+بإذن+الله" target="_blank" class="btn btn-confirm">💬 تأكيد الحضور</a>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=زفاف+عاصم+و+بتول&dates=20260508T163000Z/20260508T210000Z&location=Inci+Davet" target="_blank" class="btn" style="background:#f9f9f9; color:#777; border:1px solid #ddd;">📅 إضافة للتقويم</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
